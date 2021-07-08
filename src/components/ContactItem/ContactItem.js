@@ -8,7 +8,7 @@ export default function ContactItem({ item, onDelete }) {
   return (
     <tr>
       <th scope="row">{item.name}</th>
-      <td>{item.surname}</td>
+      <td>{item.email}</td>
       <td>{item.phone}</td>
       <td>
         <button type="button" className="btn btn-outline-info" onClick={deleteClickHandler}>

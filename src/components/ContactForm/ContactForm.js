@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 export default function ContactForm({ onSave, onToggle }) {
-  const [newContact, setNewTodo] = useState({ name: "", surname: "", phone: "" });
+  const [newContact, setNewTodo] = useState({ name: "", email: "", phone: "" });
   const [isButtonSubmit, setButtonSubmit] = useState(true);
 
   function submitHandler(e) {
@@ -11,7 +11,7 @@ export default function ContactForm({ onSave, onToggle }) {
   }
 
   function toggleButtonSubmit(contact) {
-    if (contact.name && contact.surname && contact.phone) {
+    if (contact.name && contact.email && contact.phone) {
       setButtonSubmit(false);
     } else {
       setButtonSubmit(true);
@@ -41,11 +41,11 @@ export default function ContactForm({ onSave, onToggle }) {
       </div>
       <div className="mb-3 col">
         <input
-          value={newContact.surname}
+          value={newContact.email}
           type="text"
-          name="surname"
+          name="email"
           className="form-control"
-          placeholder="Фамилия"
+          placeholder="Почта"
           onChange={changeHandler}
         />
       </div>
